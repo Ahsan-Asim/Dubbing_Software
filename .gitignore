@@ -1,0 +1,14 @@
+# Ignore folders
+static/
+separated/
+coqui_env/
+templates/
+
+# Ignore Python environment files
+*.pyc
+__pycache__/
+venv/
+.env
+
+# Ignore Streamlit cache (optional)
+.streamlit/

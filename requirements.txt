@@ -1,0 +1,9 @@
+Flask
+torch
+werkzeug
+subprocess32  # For subprocess compatibility
+whisper
+demucs
+pydub
+TTS
+ffmpeg-python
