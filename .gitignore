@@ -1,6 +1,6 @@
 # Ignore folders
-static/
-separated/
+# static/
+# separated/
 coqui_env/
 templates/
 
