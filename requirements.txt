@@ -5,7 +5,7 @@ subprocess32  # For subprocess compatibility
 whisper
 demucs
 pydub
-TTS
+gtts
 ffmpeg-python
 streamlit
 moviepy
