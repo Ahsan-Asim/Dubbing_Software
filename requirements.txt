@@ -7,3 +7,6 @@ demucs
 pydub
 TTS
 ffmpeg-python
+streamlit
+moviepy
+numpy
