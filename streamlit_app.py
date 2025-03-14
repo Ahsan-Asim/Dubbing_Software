@@ -33,8 +33,9 @@ if uploaded_file:
         with open(video_path, "wb") as f:
             f.write(uploaded_file.read())
 
-        output_video_path = os.path.join(OUTPUT_FOLDER, "dubbed_" + secure_filename(uploaded_file.name))
-        
+        # output_video_path = os.path.join(OUTPUT_FOLDER, "dubbed_" + secure_filename(uploaded_file.name))
+        output_video_path = "static/outputs/final_video.mp4"
+
         with st.spinner("Processing... ⏳"):
             run_processing_pipeline(video_path, output_video_path)
         
