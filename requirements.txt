@@ -1,14 +1,11 @@
 Flask
 torch
 werkzeug
-subprocess32  # For subprocess compatibility
-whisper
+openai-whisper
 demucs
 pydub
 ffmpeg-python
 streamlit
 moviepy
 numpy
-openai-whisper
 TTS
-
