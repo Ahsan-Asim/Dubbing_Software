@@ -30,7 +30,9 @@ print("✅ Extracted 15-second speaker sample!")
 
 # ✅ Load Coqui TTS with voice cloning (CPU mode)
 try:
-    tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=False)  # Set GPU to False
+    import torch
+    tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=False)
+    torch.set_default_tensor_type(torch.FloatTensor)  # Ensure CPU compatibility
     print("✅ TTS model loaded successfully on CPU!")
 except Exception as e:
     raise RuntimeError(f"❌ Failed to load TTS model: {e}")

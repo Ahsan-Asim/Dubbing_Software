@@ -1,9 +1,7 @@
 # import whisper
 # import json
 
-# print("🚀 Loading Whisper model...")  # Show loading message
-# model = whisper.load_model("small")
-# print("✅ Model loaded successfully!")
+
 
 # # Path to audio file
 # audio_path = "separated/htdemucs/original_audio1/vocals.wav"
@@ -33,6 +31,7 @@
 
 import whisper
 import json
+
 
 def transcribe_audio(audio_path, output_json):
     print("⏳ Transcribing audio... This may take a while.")

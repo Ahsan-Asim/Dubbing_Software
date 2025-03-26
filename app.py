@@ -4,6 +4,13 @@ from werkzeug.utils import secure_filename
 import subprocess
 import torch
 torch.set_default_device("cpu")  # Force PyTorch to run on CPU
+import sys  # Add this at the top
+
+def run_processing_pipeline(video_path, output_video_path):
+    """Run your dubbing pipeline here."""
+    subprocess.run([sys.executable, "transcribe_audio.py"])
+    subprocess.run([sys.executable, "generate_captions.py"])
+    subprocess.run([sys.executable, "aiwy.py"])
 
 app = Flask(__name__)
 
@@ -18,26 +25,34 @@ app.config['OUTPUT_FOLDER'] = OUTPUT_FOLDER
 def run_processing_pipeline(video_path, output_video_path):
     """Run your dubbing pipeline here."""
     # Step 1: Extract Audio
-    subprocess.run(["python", "extract_audio.py", video_path])
+    # subprocess.run(["python", "extract_audio.py", video_path])
 
     # Step 2: Separate Vocals
-    subprocess.run(["python", "separate_vocals.py"])
+    # subprocess.run(["python", "separate_vocals.py"])
+    subprocess.run([sys.executable, "extract_audio.py", video_path])
+    subprocess.run([sys.executable, "separate_vocals.py"])
 
     # Step 3: Transcribe Audio
-    subprocess.run(["python", "transcribe_audio.py"])
+    # subprocess.run(["python", "transcribe_audio.py"])
+    subprocess.run([sys.executable, "transcribe_audio.py"])
+
 
     # Step 4: Generate Voice
-    subprocess.run(["python", "generate_voice.py"])
+    # subprocess.run(["python", "generate_voice.py"])
 
     # # Step 5: Generate Captions
-    subprocess.run(["python", "generate_captions.py"])
+    # subprocess.run(["python", "generate_captions.py"])
+    subprocess.run([sys.executable, "generate_captions.py"])
+
 
     # # Step 6: Mix Audio
-    subprocess.run(["python", "mix_audio.py"])
+    # subprocess.run(["python", "mix_audio.py"])
 
     # # Step 7: Merge Dubbing Output
-    subprocess.run(["python", "merge_audio_video.py", video_path, output_video_path])
+    # subprocess.run(["python", "merge_audio_video.py", video_path, output_video_path])
     # subprocess.run(["python", "aiwy.py"])
+    subprocess.run([sys.executable, "aiwy.py"])
+
 
 @app.route("/", methods=["GET", "POST"])
 def upload_file():
@@ -48,6 +63,7 @@ def upload_file():
             return "No file selected!"
 
         # Save uploaded file as "Conversation3.mp4"
+        
         new_filename = "Conversation3.mp4"
         video_path = os.path.join(app.config["UPLOAD_FOLDER"], new_filename)
         uploaded_file.save(video_path)
