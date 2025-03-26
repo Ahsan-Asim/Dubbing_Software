@@ -1,1 +1,11 @@
-ffmpeg
+Flask
+torch
+werkzeug
+openai-whisper
+demucs
+pydub
+ffmpeg-python
+streamlit
+moviepy
+numpy
+TTS
