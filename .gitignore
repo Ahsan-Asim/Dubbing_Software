@@ -3,6 +3,8 @@
 # separated/
 coqui_env/
 templates/
+separated/
+static/
 
 # Ignore Python environment files
 *.pyc

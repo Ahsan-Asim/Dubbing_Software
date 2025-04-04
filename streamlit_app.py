@@ -3,6 +3,11 @@ import os
 import subprocess
 from werkzeug.utils import secure_filename
 
+import sys
+import uuid
+
+
+
 # Configure upload & output folders
 UPLOAD_FOLDER = 'static/uploads'
 OUTPUT_FOLDER = 'static/outputs'
@@ -18,6 +23,7 @@ def run_processing_pipeline(video_path, output_video_path):
     subprocess.run(["python", "generate_captions.py"])
     # subprocess.run(["python", "mix_audio.py"])
     # subprocess.run(["python", "merge_audio_video.py", video_path, output_video_path])
+    subprocess.run([sys.executable, "aiwy.py"])
 
 st.title("🎬 AI Video Dubbing App")
 
@@ -27,7 +33,7 @@ if uploaded_file:
     st.video(uploaded_file)
 
     if st.button("Process Video 🎙️"):
-        new_filename = "Conversation3.mp4"
+        new_filename = f"{uuid.uuid4().hex}.mp4"
         video_path = os.path.join(UPLOAD_FOLDER, new_filename)
         
         with open(video_path, "wb") as f:
