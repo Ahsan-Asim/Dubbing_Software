@@ -16,4 +16,7 @@ demucs
 # numpy
 # TTS
 werkzeug
+whisper
+TTS
+
 
