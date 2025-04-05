@@ -31,6 +31,9 @@
 
 import whisper
 import json
+from utils import ensure_directories
+
+ensure_directories()
 
 
 def transcribe_audio(audio_path, output_json):

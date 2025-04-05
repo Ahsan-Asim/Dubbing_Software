@@ -7,12 +7,15 @@ import sys
 import uuid
 
 
+from utils import ensure_directories
 
-# Configure upload & output folders
-UPLOAD_FOLDER = 'static/uploads'
-OUTPUT_FOLDER = 'static/outputs'
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+ensure_directories()
+
+# # Configure upload & output folders
+# UPLOAD_FOLDER = 'static/uploads'
+# OUTPUT_FOLDER = 'static/outputs'
+# os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+# os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 def run_processing_pipeline(video_path, output_video_path):
     """Run your AI dubbing pipeline."""

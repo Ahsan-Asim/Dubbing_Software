@@ -10,6 +10,9 @@
 # print("✅ Audio extracted successfully!")
 
 import subprocess
+from utils import ensure_directories
+
+ensure_directories()
 
 def extract_audio(video_path, output_audio_path):
     command = f'ffmpeg -i "{video_path}" -q:a 0 -map a "{output_audio_path}"'

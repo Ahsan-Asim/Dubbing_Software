@@ -5,14 +5,18 @@ from TTS.api import TTS
 from pydub import AudioSegment
 
 # ✅ Define paths
-speaker_audio_path = "static/outputs/original_audio.mp3"
-transcription_path = "static/outputs/transcription.json"
-background_music_path = "separated/htdemucs/original_audio/other.wav"
-output_audio_path = "static/outputs/final_synced_audio.mp3"
-video_path = "static/uploads/Conversation3.mp4"
-subtitles_path = "static/outputs/subtitles.srt"
-output_video_path = "static/outputs/final_video.mp4"
-extracted_sample_path = "static/uploads/speaker_sample.wav"
+# speaker_audio_path = "static/outputs/original_audio.mp3"
+# transcription_path = "static/outputs/transcription.json"
+# background_music_path = "separated/htdemucs/original_audio/other.wav"
+# output_audio_path = "static/outputs/final_synced_audio.mp3"
+# video_path = "static/uploads/Conversation3.mp4"
+# subtitles_path = "static/outputs/subtitles.srt"
+# output_video_path = "static/outputs/final_video.mp4"
+# extracted_sample_path = "static/uploads/speaker_sample.wav"
+from utils import ensure_directories
+
+ensure_directories()
+
 
 # ✅ Ensure required files exist
 for file_path in [speaker_audio_path, transcription_path, video_path, subtitles_path, background_music_path]:

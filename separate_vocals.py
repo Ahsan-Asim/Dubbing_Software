@@ -9,6 +9,9 @@
 # print("✅ Vocals and background separated!")
 
 import subprocess
+from utils import ensure_directories
+
+ensure_directories()
 
 def separate_audio(audio_path):
     command = f'demucs --device=cpu "{audio_path}"'  # Changed cuda to cpu
