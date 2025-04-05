@@ -1,6 +1,8 @@
 from pydub import AudioSegment
 import os
+from utils import ensure_directories
 
+ensure_directories()
 # File paths
 speech_file = "static/outputs/dubbed_audio.mp3"
 bg_music_file = "separated/htdemucs/original_audio/other.wav"

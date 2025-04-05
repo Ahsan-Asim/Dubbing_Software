@@ -1,5 +1,7 @@
 import subprocess
+from utils import ensure_directories
 
+ensure_directories()
 def merge_audio_video(video_path, dubbed_audio_path, subtitles_path, output_video_path):
     command = f'ffmpeg -i "{video_path}" -i "{dubbed_audio_path}" -map 0:v -map 1:a -c:v libx264 -c:a aac -strict experimental -vf "subtitles={subtitles_path}" "{output_video_path}"'
     subprocess.run(command, shell=True)

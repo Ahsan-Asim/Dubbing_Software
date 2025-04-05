@@ -2,7 +2,9 @@ from pydub import AudioSegment
 from gtts import gTTS
 import json
 import os
+from utils import ensure_directories
 
+ensure_directories()
 def generate_voice(transcription_json, output_audio):
     with open(transcription_json, "r", encoding="utf-8") as f:
         transcription = json.load(f)
