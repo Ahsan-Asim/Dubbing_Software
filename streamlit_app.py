@@ -5,6 +5,10 @@ from werkzeug.utils import secure_filename
 
 import sys
 import uuid
+print(sys.executable)
+import streamlit as st
+
+st.write(f"Streamlit is running under Python executable: {sys.executable}")
 
 
 from utils import ensure_directories
