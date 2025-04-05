@@ -16,7 +16,8 @@ demucs
 # numpy
 # TTS
 werkzeug
-whisper
-TTS
+whisper==1.0.0
+TTS==0.22.0
+
 
 
