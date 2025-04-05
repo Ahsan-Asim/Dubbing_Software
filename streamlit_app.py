@@ -12,8 +12,8 @@ from utils import ensure_directories
 ensure_directories()
 
 # # Configure upload & output folders
-# UPLOAD_FOLDER = 'static/uploads'
-# OUTPUT_FOLDER = 'static/outputs'
+UPLOAD_FOLDER = 'static/uploads'
+OUTPUT_FOLDER = 'static/outputs'
 # os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 # os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
