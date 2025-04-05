@@ -28,9 +28,9 @@ def run_processing_pipeline(video_path, output_video_path):
     subprocess.run(["python", "transcribe_audio.py"])
     # subprocess.run(["python", "generate_voice.py"])
     subprocess.run(["python", "generate_captions.py"])
-    # subprocess.run(["python", "mix_audio.py"])
-    # subprocess.run(["python", "merge_audio_video.py", video_path, output_video_path])
-    subprocess.run([sys.executable, "aiwy.py"])
+    subprocess.run(["python", "mix_audio.py"])
+    subprocess.run(["python", "merge_audio_video.py", video_path, output_video_path])
+    # subprocess.run([sys.executable, "aiwy.py"])
 
 st.title("🎬 AI Video Dubbing App")
 
