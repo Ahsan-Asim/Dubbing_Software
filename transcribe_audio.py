@@ -35,7 +35,7 @@ import json
 
 def transcribe_audio(audio_path, output_json):
     print("⏳ Transcribing audio... This may take a while.")
-    model = whisper.load_model("large")
+    model = whisper.load_model("small")
     result = model.transcribe(audio_path, language="en", word_timestamps=True)
 
     with open(output_json, "w") as f:
