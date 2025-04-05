@@ -17,7 +17,7 @@ demucs
 # TTS
 werkzeug
 # whisper==1.0.0
-TTS==0.22.0
+# TTS==0.22.0
 
 
 
